@@ -26,11 +26,11 @@ FUNCTIONS:
 
 */
 
-function generateRandomNum() {
+export function generateRandomNum() {
   return Math.floor(Math.random() * 70 + 1);
 }
 
-function createListOfSix() {
+export function createListOfSix() {
   const listOfSix: number[] = [];
   for (let i = 0; i < 6; i++) {
     const randomNum = generateRandomNum();
@@ -43,10 +43,8 @@ function createListOfSix() {
   return listOfSix;
 }
 
-function sortListAsc() {
-  return createListOfSix().sort((a, b) => a - b);
+export function sortListAsc(list: number[]) {
+  return list.sort((a, b) => a - b);
 }
 
-for (let i = 0; i < 100; i++) {
-  console.log(sortListAsc());
-}
+console.log(sortListAsc([1, 5, 2, 67, 34, 3]));
